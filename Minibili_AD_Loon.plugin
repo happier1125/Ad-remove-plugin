@@ -4,7 +4,7 @@
 #!homepage=https://github.com/Liano
 #!icon=https://raw.githubusercontent.com/happier1125/Ad-remove-plugin/main/Minibili.PNG
 
-https://ahrefs.com/writing-tools/paragraph-rewriter
+[URL Rewrite]
 # 1. 视频跳转（仅在浏览器中访问 b 站网页时生效）
 ^https?:\/\/(?:www\.|m\.)?bilibili\.com\/video\/(BV[A-Za-z0-9]+|av[0-9]+) minibili://video/$1 302 user-agent==*Safari*
 
@@ -15,4 +15,6 @@ https://ahrefs.com/writing-tools/paragraph-rewriter
 ^https?:\/\/live\.bilibili\.com\/(?:h5\/)?([0-9]+) minibili://live/$1 302 user-agent==*Safari*
 
 [MITM]
-hostname = *.bilibili.com
+# 优化主机名：由于只是给网页端做重定向，我们不需要解密全站 API（如 api.bilibili.com）
+# 只需要解密浏览器会访问的网页和搜索域名即可，从根源上避开 PiliPlus 的 API
+hostname = www.bilibili.com, m.bilibili.com, search.bilibili.com, live.bilibili.com
