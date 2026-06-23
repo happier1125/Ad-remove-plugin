@@ -1,0 +1,12 @@
+#[rewrite_local]
+# 1. 视频跳转
+^https?:\/\/(?:www\.|m\.)?bilibili\.com\/video\/(BV[A-Za-z0-9]+|av[0-9]+).* minibili://video/$1 302
+
+# 2. 搜索跳转 (优化了匹配规则，允许 keyword 前面有其他参数)
+^https?:\/\/search\.bilibili\.com\/([^?]+)\?.*[?&]keyword=([^&]+) minibili://search?keyword=$2&type=$1 302
+
+# 3. 直播间跳转
+^https?:\/\/live\.bilibili\.com\/(?:h5\/)?([0-9]+) minibili://live/$1 302
+
+#[mitm]
+hostname = *.bilibili.com
