@@ -15,4 +15,4 @@
 ^https?:\/\/live\.bilibili\.com\/(?:h5\/)?([0-9]+).* minibili://live/$1 302
 
 [MITM]
-hostname = *.bilibili.com
+hostname = www.bilibili.com, m.bilibili.com, bilibili.com, search.bilibili.com, live.bilibili.com
