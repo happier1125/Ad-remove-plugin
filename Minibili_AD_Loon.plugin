@@ -1,18 +1,18 @@
 #!name=MiniBili 跳转
-#!desc=将 Bilibili 网页视频、搜索以及直播间链接重定向到 MiniBili App（已排除 PiliPlus 兼容问题）。
+#!desc=将 Bilibili 网页视频、搜索以及直播间链接重定向到 MiniBili App。仅在 Safari、Chrome 等浏览器内生效，绝不干扰 PiliPlus 等第三方客户端。
 #!author=Liano & Gemini
 #!homepage=https://github.com/Liano
 #!icon=https://raw.githubusercontent.com/happier1125/Ad-remove-plugin/main/Minibili.PNG
 
-[URL Rewrite]
-# 1. 视频跳转（排除 PiliPlus、PiliPala、Dart 请求）
-^https?:\/\/(?:www\.|m\.)?bilibili\.com\/video\/(BV[A-Za-z0-9]+|av[0-9]+) minibili://video/$1 302 user-agent!=*(PiliPlus|PiliPala|Dart)*
+https://ahrefs.com/writing-tools/paragraph-rewriter
+# 1. 视频跳转（仅在浏览器中访问 b 站网页时生效）
+^https?:\/\/(?:www\.|m\.)?bilibili\.com\/video\/(BV[A-Za-z0-9]+|av[0-9]+) minibili://video/$1 302 user-agent==*Safari*
 
-# 2. 搜索跳转（优化了 keyword 匹配，同时排除 PiliPlus）
-^https?:\/\/search\.bilibili\.com\/([^?]+)\?.*[?&]keyword=([^&]+) minibili://search?keyword=$2&type=$1 302 user-agent!=*(PiliPlus|PiliPala|Dart)*
+# 2. 搜索跳转（仅在浏览器中生效）
+^https?:\/\/search\.bilibili\.com\/([^?]+)\?.*[?&]keyword=([^&]+) minibili://search?keyword=$2&type=$1 302 user-agent==*Safari*
 
-# 3. 直播间跳转（排除 PiliPlus）
-^https?:\/\/live\.bilibili\.com\/(?:h5\/)?([0-9]+) minibili://live/$1 302 user-agent!=*(PiliPlus|PiliPala|Dart)*
+# 3. 直播间跳转（仅在浏览器中生效）
+^https?:\/\/live\.bilibili\.com\/(?:h5\/)?([0-9]+) minibili://live/$1 302 user-agent==*Safari*
 
 [MITM]
 hostname = *.bilibili.com
