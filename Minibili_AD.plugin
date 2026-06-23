@@ -1,0 +1,18 @@
+#!name=MiniBili 跳转
+#!desc=将 Bilibili 网页视频、搜索以及直播间链接重定向到 MiniBili App。
+#!author=Liano
+#!homepage=https://github.com/Liano
+#!icon=https://raw.githubusercontent.com/bilibili/favicon.ico
+
+[URL Rewrite]
+# 1. 视频跳转
+^https?:\/\/(?:www\.|m\.)?bilibili\.com\/video\/(BV[A-Za-z0-9]+|av[0-9]+|[0-9]+).* minibili://video/$1 302
+
+# 2. 搜索跳转
+^https?:\/\/search\.bilibili\.com\/([a-zA-Z0-9_]+)\?.*keyword=([^&]+).* minibili://search?keyword=$2&type=$1 302
+
+# 3. 直播间跳转
+^https?:\/\/live\.bilibili\.com\/(?:h5\/)?([0-9]+).* minibili://live/$1 302
+
+[MITM]
+hostname = *.bilibili.com
