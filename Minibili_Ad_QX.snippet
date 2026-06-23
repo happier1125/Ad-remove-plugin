@@ -1,13 +1,10 @@
-[rewrite_local]
-
-# BV / av / 数字 AV 视频
+# 视频
 ^https?:\/\/(?:www\.|m\.)?bilibili\.com\/video\/((?:BV[A-Za-z0-9]+)|(?:av\d+)|(?:\d+))(?:\?.*)?$ url 302 minibili://video/$1
-
-# 直播间（支持 live.bilibili.com/123456 和 live.bilibili.com/h5/123456）
-^https?:\/\/live\.bilibili\.com\/(?:h5\/)?(\d+)(?:\?.*)?$ url 302 minibili://live/$1
 
 # 搜索
 ^https?:\/\/search\.bilibili\.com\/([^/?]+).*?[?&]keyword=([^&]+).* url 302 minibili://search?type=$1&keyword=$2
 
-[mitm]
+# 直播
+^https?:\/\/live\.bilibili\.com\/(?:h5\/)?(\d+)(?:\?.*)?$ url 302 minibili://live/$1
+
 hostname = www.bilibili.com,m.bilibili.com,bilibili.com,search.bilibili.com,live.bilibili.com
