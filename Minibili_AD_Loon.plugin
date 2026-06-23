@@ -2,7 +2,7 @@
 #!desc=将 Bilibili 网页视频、搜索以及直播间链接重定向到 MiniBili App。
 #!author=Liano
 #!homepage=https://github.com/Liano
-#!icon=https://raw.githubusercontent.com/bilibili/favicon.ico
+#!icon=https://raw.githubusercontent.com/happier1125/Ad-remove-plugin/main/Minibili.PNG
 
 [URL Rewrite]
 # 1. 视频跳转
