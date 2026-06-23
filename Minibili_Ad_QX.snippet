@@ -1,17 +1,15 @@
-#!name=MiniBili
-#!desc=将 Bilibili 网页视频、搜索以及直播间链接重定向到 MiniBili App，需要打开 MITM。
-#!author=Liano
+# > MiniBili 跳转 (含直播)
+# @author Liano
 
-[Rewrite]
+[rewrite_local]
 # 1. 视频跳转
-^https?:\/\/(?:www\.|m\.)?bilibili\.com\/video\/(BV[A-Za-z0-9]+|av[0-9]+|[0-9]+).* minibili://video/$1 302
+^https?://(?:www\.|m\.)?bilibili\.com/video/(BV[A-Za-z0-9]+|av[0-9]+) url 302 minibili://video/$1
 
 # 2. 搜索跳转
-^https?:\/\/search\.bilibili\.com\/([a-zA-Z0-9_]+)\?.*keyword=([^&]+).* minibili://search?keyword=$2&type=$1 302
+^https?://search\.bilibili\.com/([^?]+)\?.*[?&]keyword=([^&]+) url 302 minibili://search?keyword=$2&type=$1
 
-# 3. 直播间跳转 (新增)
-^https?:\/\/live\.bilibili\.com\/(?:h5\/)?([0-9]+).* minibili://live/$1 302
+# 3. 直播间跳转
+^https?://live\.bilibili\.com/(?:h5/)?([0-9]+) url 302 minibili://live/$1
 
-[MITM]
-hostname = www.bilibili.com, m.bilibili.com, bilibili.com, search.bilibili.com, live.bilibili.com
-这个代码能给 qx 用吗
+[mitm]
+hostname = *.bilibili.com
