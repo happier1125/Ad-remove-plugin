@@ -4,4 +4,4 @@
 #!icon=https://raw.githubusercontent.com/happier1125/Ad-remove-plugin/main/Turrit.PNG
 
 [Script]
-http-request ^https?://(www.)?(t.me|telegram.me)/.* script-path=https://raw.githubusercontent.com/happier1125/Ad-remove-plugin/main/TG2Turrit.js,requires-body=false,timeout=10,tag=TG2Turrit
+http-request ^https?://(www.)?(t.me|telegram.me)/.* script-path=https://raw.githubusercontent.com/happier1125/Ad-remove-plugin/main/TG_Turrit_Loon.js,requires-body=false,timeout=10,tag=TG2Turrit
