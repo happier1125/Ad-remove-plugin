@@ -1,0 +1,26 @@
+{
+  "entries": {
+    "ad_app_open_interval_minutes": "9999999",
+    "ad_interstitial_interval_minutes": "9999999",
+    "ad_native_interval": "9999999",
+    "ad_premium_rewarded_interval_minutes": "0",
+    "ad_rewarded_interval_minutes": "9999999",
+    "ad_unit_app_open_android": "",
+    "ad_unit_app_open_ios": "",
+    "ad_unit_banner_android": "",
+    "ad_unit_banner_ios": "",
+    "ad_unit_interstitial_android": "",
+    "ad_unit_interstitial_ios": "",
+    "ad_unit_native_android": "",
+    "ad_unit_native_ios": "",
+    "ad_unit_rewarded_android": "",
+    "ad_unit_rewarded_ios": "",
+    "freemium_enable": "false",
+    "grok_translated_post_enable": "true",
+    "lib_security_integrity_mode": "0",
+    "webview_upgrade_source_url": "https://github.com/JonaNorman/WebViewPackage/releases/download/google/146.0.7680.164_min29_arm32+64.apk"
+  },
+  "appName": "app.jjyy.chuckle",
+  "state": "UPDATE",
+  "templateVersion": "21"
+}
