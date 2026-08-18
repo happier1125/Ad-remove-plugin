@@ -1,0 +1,85 @@
+#!name=avple
+#!desc=Block Ads for AVPLE / Taiav / HSEX / 123AV / 634.tv
+#!author=Liano
+#!homepage=https://github.com/happier1125/avple-adblock
+#!openUrl=https://github.com/happier1125/avple-adblock
+#!system=ios27.0
+
+[Rule]
+
+# Common Adult Ad Networks
+DOMAIN-SUFFIX,magsrv.com,REJECT
+DOMAIN-SUFFIX,juicyads.com,REJECT
+DOMAIN-SUFFIX,trafficjunky.net,REJECT
+DOMAIN-SUFFIX,exosrv.com,REJECT
+DOMAIN-SUFFIX,exoclick.com,REJECT
+DOMAIN-SUFFIX,popads.net,REJECT
+DOMAIN-SUFFIX,popcash.net,REJECT
+DOMAIN-SUFFIX,ero-advertising.com,REJECT
+DOMAIN-SUFFIX,hilltopads.net,REJECT
+DOMAIN-SUFFIX,trafficfactory.biz,REJECT
+DOMAIN-SUFFIX,adtng.com,REJECT
+DOMAIN-SUFFIX,tsyndicate.com,REJECT
+DOMAIN-SUFFIX,jads.co,REJECT
+DOMAIN-SUFFIX,awejmp.com,REJECT
+DOMAIN-SUFFIX,rtmark.net,REJECT
+DOMAIN-SUFFIX,highrevenuegate.com,REJECT
+DOMAIN-SUFFIX,deliverydom.com,REJECT
+DOMAIN-SUFFIX,mmwebhandler.com,REJECT
+DOMAIN-SUFFIX,rekoverr.com,REJECT
+DOMAIN-SUFFIX,profitableratecpm.com,REJECT
+DOMAIN-SUFFIX,s2sdc.net,REJECT
+
+# LIVE Widget Networks
+DOMAIN-SUFFIX,pemsrv.com,REJECT
+DOMAIN-SUFFIX,bluetrafficstream.com,REJECT
+DOMAIN-SUFFIX,spotlanding.com,REJECT
+DOMAIN-SUFFIX,spotloader.com,REJECT
+
+# Taiav / AVPLE
+DOMAIN-SUFFIX,marzaent.com,REJECT
+DOMAIN-SUFFIX,realsrv.com,REJECT
+DOMAIN-SUFFIX,trackwilltrk.com,REJECT
+DOMAIN-SUFFIX,mavrtracktor.com,REJECT
+
+DOMAIN,go.mavrtracktor.com,REJECT
+DOMAIN,go.marzaent.com,REJECT
+
+DOMAIN-SUFFIX,stripchats.website,REJECT
+DOMAIN-SUFFIX,stripchats.chat,REJECT
+DOMAIN-SUFFIX,stripchats.me,REJECT
+
+# 634.tv
+DOMAIN-SUFFIX,dtscout.com,REJECT
+DOMAIN-SUFFIX,j5l733.com,REJECT
+DOMAIN-SUFFIX,nqtg15.com,REJECT
+DOMAIN-SUFFIX,7xu1ie.com,REJECT
+DOMAIN-SUFFIX,eraserpen.cc,REJECT
+
+# 123AV
+DOMAIN,go.xlivrdr.com,REJECT
+DOMAIN,creative.marzaent.com,REJECT
+DOMAIN,video.marzaent.com,REJECT
+
+# HSEX
+DOMAIN-SUFFIX,phncdn.com,REJECT
+
+# Common Ad URLs
+URL-REGEX,^https?:\/\/.*(popup|popunder|banner|preroll|ads?|advert|redirect).*,REJECT
+URL-REGEX,^https?:\/\/.*(click|track|redirect|jump).*,REJECT
+
+[Rewrite]
+
+http-response ^https?:\/\/([^\/]+\.)?123av\.com\/.* script-path=https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js, requires-body=true, timeout=60
+
+http-response ^https?:\/\/([^\/]+\.)?hsex\.tv\/.* script-path=https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js, requires-body=true, timeout=60
+
+http-response ^https?:\/\/([^\/]+\.)?avple\.tv\/.* script-path=https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js, requires-body=true, timeout=60
+
+http-response ^https?:\/\/([^\/]+\.)?634\.tv\/.* script-path=https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js, requires-body=true, timeout=60
+
+# Taiav 不做 Rewrite
+# 避免误伤视频播放
+
+[MITM]
+hostname = *.123av.com, *.hsex.tv, *.avple.tv, *.634.tv

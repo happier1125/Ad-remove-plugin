@@ -1,0 +1,45 @@
+#!name=AVPLE Ads Block
+#!desc=Block Ads for AVPLE / Taiav / HSEX / 123AV / 634.tv
+#!author=Liano
+
+hostname=*.123av.com,*.hsex.tv,*.avple.tv,*.634.tv
+
+# JS 注入
+^https?:\/\/([^\/]+\.)?123av\.com\/.* url script-response-body https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js
+
+^https?:\/\/([^\/]+\.)?hsex\.tv\/.* url script-response-body https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js
+
+^https?:\/\/([^\/]+\.)?avple\.tv\/.* url script-response-body https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js
+
+^https?:\/\/([^\/]+\.)?634\.tv\/.* url script-response-body https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js
+
+# 广告域名
+host-suffix,magsrv.com,reject
+host-suffix,juicyads.com,reject
+host-suffix,trafficjunky.net,reject
+host-suffix,exosrv.com,reject
+host-suffix,exoclick.com,reject
+host-suffix,popads.net,reject
+host-suffix,popcash.net,reject
+host-suffix,ero-advertising.com,reject
+host-suffix,hilltopads.net,reject
+host-suffix,trafficfactory.biz,reject
+host-suffix,adtng.com,reject
+host-suffix,tsyndicate.com,reject
+host-suffix,jads.co,reject
+host-suffix,rtmark.net,reject
+host-suffix,deliverydom.com,reject
+host-suffix,mmwebhandler.com,reject
+host-suffix,realsrv.com,reject
+host-suffix,mavrtracktor.com,reject
+host-suffix,marzaent.com,reject
+host-suffix,pemsrv.com,reject
+host-suffix,bluetrafficstream.com,reject
+host-suffix,stripchats.website,reject
+host-suffix,stripchats.chat,reject
+host-suffix,stripchats.me,reject
+host-suffix,dtscout.com,reject
+host-suffix,nqtg15.com,reject
+host-suffix,7xu1ie.com,reject
+host-suffix,eraserpen.cc,reject
+host-suffix,phncdn.com,reject
