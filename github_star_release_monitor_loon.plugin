@@ -1,0 +1,7 @@
+#!name=GitHub Star Release 监控
+#!desc=每小时检查 GitHub Star 仓库是否发布新 Release
+#!author=自用
+#!homepage=https://github.com/
+
+[Script]
+cron "0 * * * *" script-path=github_star_release_monitor_loon.js, timeout=300, tag=GitHub Star Release 监控, enabled=true
