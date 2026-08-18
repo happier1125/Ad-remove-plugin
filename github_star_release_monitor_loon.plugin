@@ -1,6 +1,6 @@
 #!name=GitHub Star Release 监控
 #!desc=每小时检查 GitHub Star 仓库是否发布新 Release
-#!author=自用
+#!author=Lianolt
 #!homepage=https://github.com/
 
 [Script]
