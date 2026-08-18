@@ -35,7 +35,7 @@ const CONFIG = {
     //
     // 如果全部监控公开仓库，也可以尝试留空。
     //
-    GITHUB_TOKEN: "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",
+    GITHUB_TOKEN: "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",
 
 
     // ========================================================
