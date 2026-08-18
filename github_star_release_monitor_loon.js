@@ -16,6 +16,7 @@
  * 7. 点击通知打开 GitHub Release
  * 8. 默认忽略 Pre-release
  * 9. 自动保存历史版本
+ * 10. Token 通过 Loon 插件页面参数填写，无需修改 JS
  *
  * Loon 专用
  * ============================================================
@@ -27,13 +28,16 @@ const CONFIG = {
     // GitHub Token
     // ========================================================
     //
-    // 请在这里填写你重新生成的 GitHub Token。
+    // Token 由 Loon 插件页面的「GitHub Token」参数传入。
+    // 不再需要把 Token 直接写进 JS 文件。
     //
-    // 权限：
-    // Account permissions
-    //     Starring -> Read-only
-    //
-    GITHUB_TOKEN: "Your GitHub Token",
+    GITHUB_TOKEN: (
+        typeof $argument !== "undefined" &&
+        $argument &&
+        $argument.github_token
+    )
+        ? String($argument.github_token).trim()
+        : "",
 
 
     // ========================================================
@@ -199,12 +203,7 @@ function githubRequest(url) {
              * Token
              */
 
-            if (
-                CONFIG.GITHUB_TOKEN &&
-                CONFIG.GITHUB_TOKEN.indexOf(
-                    "在这里填写"
-                ) === -1
-            ) {
+            if (CONFIG.GITHUB_TOKEN) {
 
                 headers["Authorization"] =
                     "Bearer " +
@@ -694,6 +693,13 @@ async function main() {
     log(
         "========== 开始检查 =========="
     );
+
+    if (!CONFIG.GITHUB_TOKEN) {
+
+        throw new Error(
+            "未填写 GitHub Token，请打开 Loon → 插件 → GitHub Star Release 监控，在「GitHub Token」中填写 Token。"
+        );
+    }
 
 
     /*
