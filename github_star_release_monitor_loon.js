@@ -33,7 +33,7 @@ const CONFIG = {
     // Account permissions
     //     Starring -> Read-only
     //
-    GITHUB_TOKEN: "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",
+    GITHUB_TOKEN: "Your GitHub Token",
 
 
     // ========================================================
