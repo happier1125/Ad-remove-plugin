@@ -1,17 +1,17 @@
 #!name=AVPLE Ads Block
 #!desc=Block Ads for AVPLE / Taiav / HSEX / 123AV / 634.tv
-#!author=Liano
+#!author=Lianolt
 
 hostname=*.123av.com,*.hsex.tv,*.avple.tv,*.634.tv
 
 # JS 注入
-^https?:\/\/([^\/]+\.)?123av\.com\/.* url script-response-body https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js
+^https?:\/\/([^\/]+\.)?123av\.com\/.* url script-response-body https://raw.githubusercontent.com/Lianolt/Ad-remove-plugin/main/Avple/remove_ads.js
 
-^https?:\/\/([^\/]+\.)?hsex\.tv\/.* url script-response-body https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js
+^https?:\/\/([^\/]+\.)?hsex\.tv\/.* url script-response-body https://raw.githubusercontent.com/Lianolt/Ad-remove-plugin/main/Avple/remove_ads.js
 
-^https?:\/\/([^\/]+\.)?avple\.tv\/.* url script-response-body https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js
+^https?:\/\/([^\/]+\.)?avple\.tv\/.* url script-response-body https://raw.githubusercontent.com/Lianolt/Ad-remove-plugin/main/Avple/remove_ads.js
 
-^https?:\/\/([^\/]+\.)?634\.tv\/.* url script-response-body https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js
+^https?:\/\/([^\/]+\.)?634\.tv\/.* url script-response-body https://raw.githubusercontent.com/Lianolt/Ad-remove-plugin/main/Avple/remove_ads.js
 
 # 广告域名
 host-suffix,magsrv.com,reject
