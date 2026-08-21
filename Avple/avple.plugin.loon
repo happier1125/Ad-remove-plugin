@@ -1,8 +1,8 @@
 #!name=avple
 #!desc=Block Ads for AVPLE / Taiav / HSEX / 123AV / 634.tv
 #!author=Liano
-#!homepage=https://github.com/happier1125/avple-adblock
-#!openUrl=https://github.com/happier1125/avple-adblock
+#!homepage=https://github.com/Lianolt/avple-adblock
+#!openUrl=https://github.com/Lianolt/avple-adblock
 #!system=ios27.0
 
 [Rule]
@@ -70,13 +70,13 @@ URL-REGEX,^https?:\/\/.*(click|track|redirect|jump).*,REJECT
 
 [Rewrite]
 
-http-response ^https?:\/\/([^\/]+\.)?123av\.com\/.* script-path=https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js, requires-body=true, timeout=60
+http-response ^https?:\/\/([^\/]+\.)?123av\.com\/.* script-path=https://raw.githubusercontent.com/Lianolt/Ad-remove-plugin/main/Avple/remove_ads.js, requires-body=true, timeout=60
 
-http-response ^https?:\/\/([^\/]+\.)?hsex\.tv\/.* script-path=https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js, requires-body=true, timeout=60
+http-response ^https?:\/\/([^\/]+\.)?hsex\.tv\/.* script-path=https://raw.githubusercontent.com/Lianolt/Ad-remove-plugin/main/Avple/remove_ads.js, requires-body=true, timeout=60
 
-http-response ^https?:\/\/([^\/]+\.)?avple\.tv\/.* script-path=https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js, requires-body=true, timeout=60
+http-response ^https?:\/\/([^\/]+\.)?avple\.tv\/.* script-path=https://raw.githubusercontent.com/Lianolt/Ad-remove-plugin/main/Avple/remove_ads.js, requires-body=true, timeout=60
 
-http-response ^https?:\/\/([^\/]+\.)?634\.tv\/.* script-path=https://raw.githubusercontent.com/happier1125/avple-adblock/main/remove_ads.js, requires-body=true, timeout=60
+http-response ^https?:\/\/([^\/]+\.)?634\.tv\/.* script-path=https://raw.githubusercontent.com/Lianolt/Ad-remove-plugin/main/Avple/remove_ads.js, requires-body=true, timeout=60
 
 # Taiav 不做 Rewrite
 # 避免误伤视频播放
